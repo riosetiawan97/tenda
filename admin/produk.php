@@ -1,8 +1,9 @@
 <div class="container">
+<div class="col-lg-1">
+  </div>
         <h3 class="uppercase text-center">Produk</h3>
-      </div>
 
-<a href="index.php?halaman=tambahproduk" class="btn btn-primary">Tambah Produk</a><br />
+<a href="?halaman=tambahproduk" class="btn btn-primary">Tambah Produk</a><br /><br />
 
 <table class="table table-bordered">
   <thead>
@@ -37,3 +38,5 @@
     <?php } ?>
   </tbody>
 </table>
+
+</div>

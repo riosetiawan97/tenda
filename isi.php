@@ -2,13 +2,19 @@
 $halaman = @$_GET['halaman'];
 if($halaman == ""){
 	include "home.php";
-}else if (isset($_GET['halaman']))
-                {
-                    if ($_GET['halaman']=="produk")
-                    {include 'produk.php';
-                    }
-                    elseif ($_GET['halaman']=="tambahproduk")
-                    {include 'tambahproduk.php';	
-                    }
+}else if (isset($_GET['halaman'])){
+    if ($_GET['halaman']=="produk"){
+        include 'produk.php';
+    }elseif ($_GET['halaman']=="tambahproduk"){
+        include 'tambahproduk.php';	
+    }elseif ($_GET['halaman']=="login"){
+        if(@$_SESSION['admin']){
+            header("location:indexadmin.php");
+        }else{
+            include 'login.php';
+        }	
+    }elseif ($_GET['halaman']=="aboutus"){
+        include 'about.php';	
+    }
 }
 ?>

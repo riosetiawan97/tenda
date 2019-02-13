@@ -61,14 +61,6 @@
 					<div class="top-bar-content">
 						<p>Pemesanan <span></span><i class="icon-mobile2"></i> +628 <span></span>&bull;<span></span> <i class="icon-mail3"></i> Mail us - <a href="#">@gmail.com</a></p>
 					</div>
-						<?php
-						if(@$_SESSION['admin'] == 0){ ?>
-							<div class="top-login">							
-									<a href="?halaman=login">Login</a>
-							</div>					
-					<?php
-						}
-						?>
 					<div class="nav-social-icons">
 						<ul class="social-icons">
 							<li class="facebook">
@@ -150,87 +142,40 @@
 							</a>
 						</li>
 
-				  <li class="dropdown">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle">
-								About Us
-								<div class="arrow-up"><i class="fa fa-angle-down"></i></div>
+						<li class="dropdown">
+								<a href="?halaman=banner">
+									Banner
+								</a>
+						<li class="dropdown">
+						<a href="?halaman=galery">
+									Galery
+								</a>
+								</li>
+						<li class="dropdown">
+							<a href="?halaman=testimoni">
+								Testimoni
 							</a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">Galeri 1</a></li>
-								<li><a href="#">Galeri 2</a></li>
-								<li><a href="#">Galeri 3</a></li>
-								<li><a href="search.html">Search</a></li>
-							</ul>
-						</li>
-				  <li class="dropdown">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle">
-								Portfolio 
-								<div class="arrow-up"><i class="fa fa-angle-down"></i></div>
-							</a>
-							<ul class="dropdown-menu" role="menu">
-								<li class="dropdown-submenu">
-									<a href="#">Boxed Style</a>
-									<ul class="dropdown-menu">
-										<li><a href="portfolio-boxed-2col.html">2 Column</a></li>
-										<li><a href="portfolio-boxed-3col.html">3 Column</a></li>
-										<li><a href="portfolio-boxed-4col.html">4 Column</a></li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="#">Gutter Style</a>
-									<ul class="dropdown-menu">
-										<li><a href="portfolio-gutter-2col.html">2 Columns</a></li>
-										<li><a href="portfolio-gutter-3col.html">3 Columns</a></li>
-										<li><a href="portfolio-gutter-4col.html">4 Columns</a></li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="#">Tiles Style</a>
-									<ul class="dropdown-menu">
-										<li><a href="portfolio-tiles-2col.html">2 Columns</a></li>
-										<li><a href="portfolio-tiles-3col.html">3 Columns</a></li>
-										<li><a href="portfolio-tiles-4col.html">4 Columns</a></li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="#">Wide Style</a>
-									<ul class="dropdown-menu">
-										<li><a href="portfolio-wide-2col.html">2 Columns</a></li>
-										<li><a href="portfolio-wide-3col.html">3 Columns</a></li>
-										<li><a href="portfolio-wide-4col.html">4 Columns</a></li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="#">Single Project</a>
-									<ul class="dropdown-menu">
-										<li><a href="portfolio-floating-left.html">Floating Left Sidebar</a></li>
-										<li><a href="portfolio-floating-right.html">Floating Right Sidebar</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-				  <li class="dropdown">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle">
-								shop 
-								<div class="arrow-up"><i class="fa fa-angle-down"></i></div>
-							</a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="shop-left-sidebar.html">Shop - Left Sidebar</a></li>
-								<li><a href="shop-right-sidebar.html">Shop - Right Sidebar</a></li>
-								<li><a href="shop-fullwidth.html">Shop - Fullwidth</a></li>
-								<li><a href="shop-single-left.html">Single - Left Sidebar</a></li>
-								<li><a href="shop-single-right.html">Single - Right Sidebar</a></li>
-								<li><a href="shop-cart.html">Shop - Cart</a></li>
-								<li><a href="shop_checkout.html">Shop - Checkout</a></li>
-								<li><a href="shop-login.html">Shop - Account</a></li>
-							</ul>
 						</li>
 				  		<li class="dropdown">
-				  			<a href="?halaman=aboutus">
+							<a href="?halaman=aboutus">
 								Tentang Kami
 							</a>
 						</li>
+						<li class="dropdown">
+							<?php
+							$admin_terlogin = @$_SESSION['admin'];
+							$sql_admin = mysqli_query($koneksi, "select * from admin where id_admin = '$admin_terlogin'") or die (mysqli_error());
+							$data_admin = mysqli_fetch_array($sql_admin);
+							?>
+							<a href="#" data-toggle="dropdown" class="dropdown-toggle">
+								<?php echo $data_admin['username'];?> 
+								<div class="arrow-up"><i class="fa fa-angle-down"></i></div>
+							</a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">Edit Profil</a></li>
+								<li><a href="logout.php">Logout</a></li>
+							</ul>
+						</li>	
 				  </ul>
 				</div>
 			</div>
