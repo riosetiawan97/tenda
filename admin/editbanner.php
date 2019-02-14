@@ -8,7 +8,8 @@ $pecah = $koneksi->query("SELECT * FROM banner where id_banner='$id_banner'")->f
   <div class="col-lg-6">
 <form method="post" enctype="multipart/form-data" ">
 	<div class="form-group">
-		<label>Foto Banner</label>
+        <label>Foto Banner</label>
+        <img src="foto/<?php echo $pecah['foto_banner']; ?>" width="100">
 		<input type="file" class="form-control" name="foto">
 	</div>
 	<div class="form-group">

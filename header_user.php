@@ -123,7 +123,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
-					<a href="index.php" class="navbar-brand">LOGO</a>
+					<a href="index.php"><img src="foto/logo/LOGO TENDA.jpg" width="100" height="100"></a>
 				</div>
 
 				<!-- CART / SEARCH -->
@@ -150,80 +150,22 @@
 							</a>
 						</li>
 
+				  
 				  <li class="dropdown">
 							<a href="#" data-toggle="dropdown" class="dropdown-toggle">
-								About Us
+								Galeri
 								<div class="arrow-up"><i class="fa fa-angle-down"></i></div>
 							</a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">Galeri 1</a></li>
-								<li><a href="#">Galeri 2</a></li>
-								<li><a href="#">Galeri 3</a></li>
-								<li><a href="search.html">Search</a></li>
-							</ul>
-						</li>
-				  <li class="dropdown">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle">
-								Portfolio 
-								<div class="arrow-up"><i class="fa fa-angle-down"></i></div>
-							</a>
-							<ul class="dropdown-menu" role="menu">
-								<li class="dropdown-submenu">
-									<a href="#">Boxed Style</a>
-									<ul class="dropdown-menu">
-										<li><a href="portfolio-boxed-2col.html">2 Column</a></li>
-										<li><a href="portfolio-boxed-3col.html">3 Column</a></li>
-										<li><a href="portfolio-boxed-4col.html">4 Column</a></li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="#">Gutter Style</a>
-									<ul class="dropdown-menu">
-										<li><a href="portfolio-gutter-2col.html">2 Columns</a></li>
-										<li><a href="portfolio-gutter-3col.html">3 Columns</a></li>
-										<li><a href="portfolio-gutter-4col.html">4 Columns</a></li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="#">Tiles Style</a>
-									<ul class="dropdown-menu">
-										<li><a href="portfolio-tiles-2col.html">2 Columns</a></li>
-										<li><a href="portfolio-tiles-3col.html">3 Columns</a></li>
-										<li><a href="portfolio-tiles-4col.html">4 Columns</a></li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="#">Wide Style</a>
-									<ul class="dropdown-menu">
-										<li><a href="portfolio-wide-2col.html">2 Columns</a></li>
-										<li><a href="portfolio-wide-3col.html">3 Columns</a></li>
-										<li><a href="portfolio-wide-4col.html">4 Columns</a></li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="#">Single Project</a>
-									<ul class="dropdown-menu">
-										<li><a href="portfolio-floating-left.html">Floating Left Sidebar</a></li>
-										<li><a href="portfolio-floating-right.html">Floating Right Sidebar</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-				  <li class="dropdown">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle">
-								shop 
-								<div class="arrow-up"><i class="fa fa-angle-down"></i></div>
-							</a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="shop-left-sidebar.html">Shop - Left Sidebar</a></li>
-								<li><a href="shop-right-sidebar.html">Shop - Right Sidebar</a></li>
-								<li><a href="shop-fullwidth.html">Shop - Fullwidth</a></li>
-								<li><a href="shop-single-left.html">Single - Left Sidebar</a></li>
-								<li><a href="shop-single-right.html">Single - Right Sidebar</a></li>
-								<li><a href="shop-cart.html">Shop - Cart</a></li>
-								<li><a href="shop_checkout.html">Shop - Checkout</a></li>
-								<li><a href="shop-login.html">Shop - Account</a></li>
+								<li><a href="?halaman=galeri">Semua</a></li>
+								<?php
+									$query  = mysqli_query($koneksi, "SELECT * FROM kategori") or die (mysqli_error());
+									while ($kategori = mysqli_fetch_array($query)) {
+								?>
+								<li><a href="?halaman=galeri&galeri=<?php echo $kategori['id_kategori']; ?>"><?php echo $kategori['nama_kategori']; ?></a></li>
+								<?php
+									}
+								?>
 							</ul>
 						</li>
 				  		<li class="dropdown">

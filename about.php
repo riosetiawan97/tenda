@@ -36,72 +36,8 @@
 				$alamatinstagram =(strip_tags($data_aboutus['instagram']));
 				$instagram = substr($alamatinstagram,1);
 				?>
-				<div class="col-md-8 margin30">
-					<div class="form-contact">
-					<div class="required">
-							<p>( <span style="color:red">*</span> fields are required )</p>
-						</div>
-						<form action="" method="post">
-							<div class="row control-group">
-								<div class="form-group col-xs-12 controls">
-									<label for="tentang"><strong><i class="fa fa-map-marker"></i> Tentang:</strong><span>*</span></label>
-									<textarea rows="5" class="field-comments form-control input-lg" placeholder="Tentang" id="tentang" name="tentang" required><?php echo $data_aboutus['tentang']; ?></textarea>
-									<p class="help-block"></p>
-								</div>
-							</div>
-							<div class="row control-group">
-								<div class="form-group col-xs-12 controls">
-									<label for="alamat"><strong><i class="fa fa-map-marker"></i> Alamat:</strong><span>*</span></label>
-									<textarea rows="5" class="field-comments form-control input-lg" placeholder="Alamat" id="alamat" name="alamat" required><?php echo $data_aboutus['alamat']; ?></textarea>
-									<p class="help-block"></p>
-								</div>
-							</div>
-							<div class="row control-group">
-								<div class="form-group col-xs-12  controls">
-									<label for="no_telp"><strong><i class="fa fa-phone"></i> Nomor Telepon:</strong><span>*</span></label>
-									<input class="field-phone form-control" placeholder="Nomor Telepon" type="tel" id="no_telp" name="no_telp" value="<?php echo $data_aboutus['no_telp']; ?>" required>
-									<p class="help-block"></p>
-								</div>
-							</div>
-							<div class="row control-group">
-								<div class="form-group col-xs-12  controls">
-									<label for="email"><strong><i class="fa fa-envelope"></i> Email:</strong> <span>*</span></label>
-									<input class="field-phone form-control" placeholder="Email" type="text" id="email" name="email" value="<?php echo $data_aboutus['email']; ?>" required>
-									<p class="help-block"></p>
-								</div>
-							</div>
-							<div class="row control-group">
-								<div class="form-group col-xs-12  controls">
-									<label for="instagram"><strong><i class="fa fa-instagram"></i> Instagram:</strong> <span>*</span></label>
-									<input class="field-phone form-control" placeholder="Instagram" type="text" id="instagram" name="instagram" value="<?php echo $data_aboutus['instagram']; ?>" required>
-									<p class="help-block"></p>
-								</div>
-							</div>
-							<br>
-							<div class="row">
-								<div class="form-group col-xs-12">
-									<input type="Submit" name="edit" value="Edit" class="btn-submit button btn-md"/>
-								</div>
-							</div>
-						</form>
-						<?php
-							$tentang = @$_POST['tentang'];
-							$alamat = @$_POST['alamat'];
-							$no_telp = @$_POST['no_telp'];
-							$email = @$_POST['email'];
-							$instagramedit = @$_POST['instagram'];
-							$edit = @$_POST['edit'];
-							if($edit){		
-								mysqli_query($koneksi, "update about_us set tentang='$tentang', alamat='$alamat', no_telp='$no_telp', email='$email', instagram='$instagramedit' where id_au=1") or die (mysqli_error());
-								?>
-								<script type="text/javascript">
-									window.location.href = '?halaman=aboutus'; 
-								</script>
-										<?php					
-							}
-						?>
-					</div>
-					<!--contact form-->
+				<div class="col-md-8">
+					<p align="justify"><strong><i class="fa fa-home"></i> Tentang Kami:</strong><br> <?php echo $data_aboutus['tentang']; ?></p>
 				</div>
 				<div class="col-md-4">
 					<h3 class="no-margin">Informasi Kontak</h3>

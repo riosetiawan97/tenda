@@ -66,32 +66,12 @@
 
 	<!-- INNER CONTENT -->
 	<div class="inner-content no-padding">
-		<div class="container">
-			<div class="space60"></div>
-			<div class="welcome-content text-center">
-				<h2>Selamat Datang Admin</h2>
-				<p class="lead">Tempat Sewa Tenda Berkualitas Dengan Harga Terjangkau</p>
-			</div>
-		</div>
-		
-		<div class="clearfix"></div>
-		
-		<div class="container info-home">
-			<div class="col-md-5">
-				<img src="foto/tenda.jpg" alt="">
-			</div>
-			<div class="col-md-7">
-				<h3>Pilihan Produk</em></h3>
-				<div class="clearfix space10"></div>
-				<a href="?halaman=produk" class="button btn-lg">Halaman Produk</a>
-			</div>
-		</div>
 		
 		<div class="clearfix space90"></div>
 		
 		<section id="portfolio-section">
 			<div class="container">
-				<h3 class="uppercase text-center"> Kategori</h3>
+				<h3 class="uppercase text-center"> Galeri</h3>
 			</div>
 			<ul class="filter" data-option-key="filter">
 				<li><a class="selected" href="#filter" data-option-value="*">All</a></li>
@@ -107,7 +87,7 @@
 			
 			<div id="portfolio-home" class="isotope">
 				<?php
-                      $query  = mysqli_query($koneksi, "SELECT * FROM produk") or die (mysqli_error());
+                      $query  = mysqli_query($koneksi, "SELECT * FROM produk LIMIT 15") or die (mysqli_error());
                       while ($produk = mysqli_fetch_array($query)) {
                 ?>
 				<div class="project-item <?php echo $produk['id_kategori']; ?>">
@@ -123,8 +103,7 @@
 						</div>
 					</div>
 					<div class="project-info">
-						<h2><?php echo $produk['nama_produk']; ?></h2>
-						<p><?php echo $produk['harga'];?><?php echo $produk['satuan'];?></p>
+						
 					</div>
 				</div>
 				<?php

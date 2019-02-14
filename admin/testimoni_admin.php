@@ -24,8 +24,8 @@
       <td align="center"><?php echo $pecah['pesan_testimoni'] ?></td>
       <td align="center"><img src="foto/testimoni/<?php echo $pecah['foto_testimoni']; ?>" width="100"></td>
       <td>
-      <a href="?halaman=hapustestimoni&id=<?php echo $pecah['id_testimoni']; ?>" class="btn btn-success">Hapus</a>
-      <a href="?halaman=ubahtestimoni&id=<?php echo $pecah['id_testimoni']; ?>" class="btn btn-warning">Ubah</a>
+      <a href="?halaman=hapustestimoni&id_testimoni=<?php echo $pecah['id_testimoni']; ?>" class="btn btn-success">Hapus</a>
+      <a href="?halaman=ubahtestimoni&id_testimoni=<?php echo $pecah['id_testimoni']; ?>" class="btn btn-warning">Ubah</a>
       </td>
     </tr>
     <?php $nomor++; ?>

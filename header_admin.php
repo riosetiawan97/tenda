@@ -5,7 +5,55 @@
   
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
 
-	<title>Tenda</title>
+	<?php
+$halaman = @$_GET['halaman'];
+$id_banner = @$_GET['id_banner'];
+$id_produk = @$_GET['id_produk'];
+$id_testimoni = @$_GET['id_testimoni'];
+if($halaman == ""){
+	echo "<title>Admin Tenda</title>";
+}else if (isset($_GET['halaman'])){
+    if ($_GET['halaman']=="galeri"){
+        echo "<title>Admin Tenda | Galeri</title>";
+    }elseif ($_GET['halaman']=="tambahgaleri"){
+        echo "<title>Admin Tenda | Tambah Galeri</title>";
+    }elseif ($_GET['halaman']=="ubahgaleri"){
+        echo "<title>Admin Tenda | Ubah Galeri</title>";	
+    }elseif ($_GET['halaman']=="hapusgaleri"){
+        echo "<title>Admin Tenda | Hapus Galeri</title>";	
+    }
+    
+    elseif ($_GET['halaman']=="aboutus"){
+        echo "<title>Admin Tenda | Tentang Kami</title>";	
+    }
+    
+    elseif ($_GET['halaman']=="testimoni"){
+        echo "<title>Admin Tenda | Testimoni</title>";	
+    }elseif ($_GET['halaman']=="tambahtestimoni"){
+        echo "<title>Admin Tenda | Tambah Testimoni</title>";
+    }elseif ($_GET['halaman']=="ubahtestimoni"){
+        echo "<title>Admin Tenda | Ubah Testimoni</title>";	
+    }elseif ($_GET['halaman']=="hapustestimoni"){
+        echo "<title>Admin Tenda | Hapus Testimoni</title>";
+    }
+    
+    elseif ($_GET['halaman']=="banner"){
+        echo "<title>Admin Tenda | Banner</title>";	
+    }elseif ($_GET['halaman']=="tambahbanner"){
+        echo "<title>Admin Tenda | Tambah Banner</title>";		
+    }elseif ($_GET['halaman']=="hapusbanner"){
+        echo "<title>Admin Tenda | Hapus Banner</title>";		
+    }elseif ($_GET['halaman']=="ubahbanner"){
+        echo "<title>Admin Tenda | Ubah Banner</title>";	
+    }
+}
+
+$sql_aboutus = mysqli_query($koneksi, "select * from about_us where id_au =1") or die (mysqli_error());
+$data_aboutus = mysqli_fetch_array($sql_aboutus);					
+$alamatinstagram =(strip_tags($data_aboutus['instagram']));
+$instagram = substr($alamatinstagram,1);
+?>
+
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
@@ -87,7 +135,7 @@
 								</a>
 							</li>
 							<li class="instagram">
-								<a href="http://instagram.com" target="_blank">
+								<a href="https://www.instagram.com/<?=$instagram; ?>/" target="_blank">
 								<i class="fa fa-instagram"></i>
 								<i class="fa fa-instagram"></i>
 								</a>
@@ -115,7 +163,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
-					<a href="index.php" class="navbar-brand">LOGO</a>
+					<a href="index.php"><img src="foto/logo/LOGO TENDA.jpg" width="100" height="100"></a>
 				</div>
 
 				<!-- CART / SEARCH -->
@@ -137,8 +185,8 @@
 				<div id="navbar-collapse-1" class="navbar-collapse collapse navbar-right">
 					<ul class="nav navbar-nav">
 						<li class="nav-item">
-							<a class= "nav-link" href="index.html" >
-								Home 
+							<a class= "nav-link" href="indexadmin.php" >
+								Beranda 
 							</a>
 						</li>
 
@@ -147,8 +195,8 @@
 									Banner
 								</a>
 						<li class="dropdown">
-						<a href="?halaman=galery">
-									Galery
+						<a href="?halaman=galeri">
+									Galeri
 								</a>
 								</li>
 						<li class="dropdown">

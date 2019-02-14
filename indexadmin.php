@@ -7,6 +7,6 @@
 		include "isi_admin.php";
 		include "footer_admin.php";	
 	}else{
-		header("location: index.php");
+		header("location: index.php?halaman=login");
 	}
 ?>

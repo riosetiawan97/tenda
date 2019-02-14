@@ -10,7 +10,7 @@
 					?>
 					<h4 class="space30">Tentang Kami</h4>
 			    <img src="images/basic/logo-ico.png" class="img-responsive space20" width="70" alt=""/>
-					<p><?php echo $data_aboutus['tentang']; ?></p>
+					<p align="justify"><?php echo $data_aboutus['tentang']; ?></p>
 				</div>
 				<div class="col-md-6">
 					<h4 class="space30">Kontak</h4>

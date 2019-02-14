@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Feb 2019 pada 18.40
--- Versi server: 10.1.32-MariaDB
--- Versi PHP: 7.2.5
+-- Generation Time: 14 Feb 2019 pada 15.01
+-- Versi Server: 10.1.10-MariaDB
+-- PHP Version: 7.0.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -42,7 +40,7 @@ CREATE TABLE `about_us` (
 --
 
 INSERT INTO `about_us` (`id_au`, `tentang`, `alamat`, `no_telp`, `email`, `instagram`) VALUES
-(1, 'Kami menyewakan berbagai macam kebutuhan acara Anda, <br>\r\nDengan harga yang terjangkau.', 'RW.4, Pd. Bambu Duren Sawit Kota Jakarta Timur Daerah Khusus Ibukota Jakarta', '087800081968', 'cs@bertenda99.co.id', '@ber.tenda99');
+(1, '<strong>Ber.Tenda99</strong> adalah perusahaan jasa sewa perlengkapan alat pesta, kami menyediakan Tenda, Panggung, Sound Musik, Kursi, Meja, AC Standing, Misty Van dan lain-lain. Perusahaan kami senantiasa memberikan layanan terbaik dan selalu mengutamakan kepuasan klien. Hingga saat ini kami sudah memiliki ratusan klien dan partner.', 'RW.4, Pd. Bambu Duren Sawit Kota Jakarta Timur Daerah Khusus Ibukota Jakarta', '087800081968', 'cs@bertenda99.co.id', '@ber.tenda99');
 
 -- --------------------------------------------------------
 
@@ -87,17 +85,6 @@ INSERT INTO `banner` (`id_banner`, `foto_banner`, `judul`, `subjudul`) VALUES
 (2, '2.jpg', 'Coba 2', ''),
 (3, '3.jpg', 'coba 3', ''),
 (6, '5.jpg', 'Coba 5', '');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `galeri`
---
-
-CREATE TABLE `galeri` (
-  `id_galeri` int(4) NOT NULL,
-  `foto_galeri` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -148,24 +135,21 @@ CREATE TABLE `produk` (
   `id` int(11) NOT NULL,
   `id_kategori` int(11) NOT NULL,
   `nama_produk` varchar(30) NOT NULL,
-  `harga` int(8) NOT NULL,
-  `satuan` varchar(10) NOT NULL,
-  `foto_produk` varchar(30) NOT NULL,
-  `terjual` int(3) NOT NULL
+  `foto_produk` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `produk`
 --
 
-INSERT INTO `produk` (`id`, `id_kategori`, `nama_produk`, `harga`, `satuan`, `foto_produk`, `terjual`) VALUES
-(1, 1, 'Tenda1', 100000, '/m2', '1.jpg', 0),
-(2, 2, 'kursi', 50000, '/pc', '2.jpg', 0),
-(3, 3, 'Meja1', 75000, '/pc', '3.jpg', 0),
-(4, 4, 'Banner', 30000, '/pc', '4.jpg', 0),
-(5, 5, 'AC', 15000, '/pc', '5.jpg', 0),
-(6, 1, '', 0, '', '', 0),
-(7, 2, 'aksjdfkajsbbf', 68912, '/pcs', '10.jpg', 0);
+INSERT INTO `produk` (`id`, `id_kategori`, `nama_produk`, `foto_produk`) VALUES
+(1, 1, 'Tenda123', '1.jpg'),
+(2, 2, 'kursi', '2.jpg'),
+(3, 3, 'Meja1', '3.jpg'),
+(4, 4, 'Banner', '4.jpg'),
+(5, 5, 'AC', '5.jpg'),
+(7, 2, 'aksjdfkajsbbf', '10.jpg'),
+(13, 1, 'Tenda3', 'TENDA.JPG');
 
 -- --------------------------------------------------------
 
@@ -195,106 +179,86 @@ INSERT INTO `testimoni` (`id_testimoni`, `nama`, `pesan_testimoni`, `foto_testim
 --
 
 --
--- Indeks untuk tabel `about_us`
+-- Indexes for table `about_us`
 --
 ALTER TABLE `about_us`
   ADD PRIMARY KEY (`id_au`);
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indeks untuk tabel `banner`
+-- Indexes for table `banner`
 --
 ALTER TABLE `banner`
   ADD PRIMARY KEY (`id_banner`);
 
 --
--- Indeks untuk tabel `galeri`
---
-ALTER TABLE `galeri`
-  ADD PRIMARY KEY (`id_galeri`);
-
---
--- Indeks untuk tabel `kategori`
+-- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indeks untuk tabel `komentar`
+-- Indexes for table `komentar`
 --
 ALTER TABLE `komentar`
   ADD PRIMARY KEY (`id_komentar`);
 
 --
--- Indeks untuk tabel `produk`
+-- Indexes for table `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `testimoni`
+-- Indexes for table `testimoni`
 --
 ALTER TABLE `testimoni`
   ADD PRIMARY KEY (`id_testimoni`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `about_us`
+-- AUTO_INCREMENT for table `about_us`
 --
 ALTER TABLE `about_us`
   MODIFY `id_au` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
--- AUTO_INCREMENT untuk tabel `banner`
+-- AUTO_INCREMENT for table `banner`
 --
 ALTER TABLE `banner`
   MODIFY `id_banner` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
--- AUTO_INCREMENT untuk tabel `galeri`
---
-ALTER TABLE `galeri`
-  MODIFY `id_galeri` int(4) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT untuk tabel `kategori`
+-- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id_kategori` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
--- AUTO_INCREMENT untuk tabel `komentar`
+-- AUTO_INCREMENT for table `komentar`
 --
 ALTER TABLE `komentar`
   MODIFY `id_komentar` int(3) NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT untuk tabel `produk`
+-- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
--- AUTO_INCREMENT untuk tabel `testimoni`
+-- AUTO_INCREMENT for table `testimoni`
 --
 ALTER TABLE `testimoni`
-  MODIFY `id_testimoni` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-COMMIT;
-
+  MODIFY `id_testimoni` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

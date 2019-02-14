@@ -1,16 +1,10 @@
 <footer>
 		<div class="container">
 			<div class="row">
-					<?php
-					$sql_aboutus = mysqli_query($koneksi, "select * from about_us where id_au =1") or die (mysqli_error());
-					$data_aboutus = mysqli_fetch_array($sql_aboutus);					
-					$alamatinstagram =(strip_tags($data_aboutus['instagram']));
-					$instagram = substr($alamatinstagram,1);
-					?>
 				<div class="col-md-3">
 					<h4 class="space30">Tentang Kami</h4>
 			    <img src="images/basic/logo-ico.png" class="img-responsive space20" width="70" alt=""/>
-					<p><?php echo $data_aboutus['tentang']; ?></p>
+					<p align="justify"><?php echo $data_aboutus['tentang']; ?></p>
 				</div>
 				<div class="col-md-6">
 					<h4 class="space30">Kontak</h4>
