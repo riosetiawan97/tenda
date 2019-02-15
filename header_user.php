@@ -5,7 +5,28 @@
   
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
 
-	<title>Tenda</title>
+	<?php
+	$halaman = @$_GET['halaman'];
+	$id_galeri = @$_GET['galeri'];
+	if($halaman == ""){
+		echo "<title>Tenda</title>";
+	}else if (isset($_GET['halaman'])){
+		if ($_GET['halaman']=="login"){
+			echo "<title>Tenda | Login</title>";	
+		}elseif ($_GET['halaman']=="aboutus"){
+			echo "<title>Tenda | Tentang Kami</title>";	
+		}elseif ($_GET['halaman']=="galeri"){
+			echo "<title>Tenda | Galeri</title>";
+		}elseif ($_GET['halaman']=="testimoni"){
+			echo "<title>Tenda | Testimoni</title>";
+		}
+	}
+
+	$sql_aboutus = mysqli_query($koneksi, "select * from about_us where id_au =1") or die (mysqli_error());
+	$data_aboutus = mysqli_fetch_array($sql_aboutus);					
+	$alamatinstagram =(strip_tags($data_aboutus['instagram']));
+	$instagram = substr($alamatinstagram,1);
+	?>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
@@ -59,51 +80,22 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="top-bar-content">
-						<p>Pemesanan <span></span><i class="icon-mobile2"></i> +628 <span></span>&bull;<span></span> <i class="icon-mail3"></i> Mail us - <a href="#">@gmail.com</a></p>
+						<p>Pemesanan <span></span><i class="icon-mobile2" ></i><a href="https://api.whatsapp.com/send?phone=6287800081968&text=Hallo%20saya%20lihat%20di%20iklan%20www.bertenda99.co.id,%20saya%20mau%20konsultasi,%20mohon%20segera%20hubungi%20saya..%20%F0%9F%99%8F%F0%9F%98%8A" target="_blank">
+						
+						<?=$data_aboutus['no_telp']; ?></a><span></span>&bull;<span></span> <i class="icon-mail3"></i> Mail us - <a href="#">@gmail.com</a></p>
 					</div>
-						<?php
-						if(@$_SESSION['admin'] == 0){ ?>
-							<div class="top-login">							
-									<a href="?halaman=login">Login</a>
-							</div>					
-					<?php
-						}
-						?>
 					<div class="nav-social-icons">
 						<ul class="social-icons">
-							<li class="facebook">
-								<a href="http://facebook.com" target="_blank">
-								<i class="fa fa-facebook"></i><i class="fa fa-facebook"></i>
-								</a>
-							</li>
-							<li class="twitter">
-								<a href="http://twitter.com" target="_blank">
-								<i class="fa fa-twitter"></i>
-								<i class="fa fa-twitter"></i>
-								</a>
-							</li>
-							<li class="google-plus">
-								<a href="http://google.com" target="_blank">
-								<i class="fa fa-google-plus"></i>
-								<i class="fa fa-google-plus"></i>
-								</a>
-							</li>
-							<li class="pinterest">
-								<a href="http://pinterest.com" target="_blank">
-								<i class="fa fa-pinterest"></i>
-								<i class="fa fa-pinterest"></i>
-								</a>
-							</li>
 							<li class="instagram">
-								<a href="http://instagram.com" target="_blank">
+								<a href="https://www.instagram.com/<?=$instagram; ?>/" target="_blank">
 								<i class="fa fa-instagram"></i>
 								<i class="fa fa-instagram"></i>
 								</a>
 							</li>
 							<li class="youtube">
-								<a href="http://youtube.com" target="_blank">
-								<i class="fa fa-youtube"></i>
-								<i class="fa fa-youtube"></i>
+							<a href="https://api.whatsapp.com/send?phone=6287800081968&text=Hallo%20saya%20lihat%20di%20iklan%20www.bertenda99.co.id,%20saya%20mau%20konsultasi,%20mohon%20segera%20hubungi%20saya..%20%F0%9F%99%8F%F0%9F%98%8A" target="_blank">
+								<i class="fa fa-phone"></i>
+								<i class="fa fa-phone"></i>
 								</a>
 							</li>
 						</ul>
@@ -145,12 +137,16 @@
 				<div id="navbar-collapse-1" class="navbar-collapse collapse navbar-right">
 					<ul class="nav navbar-nav">
 						<li class="nav-item">
-							<a class= "nav-link" href="index.html" >
+							<a class= "nav-link" href="index.php" >
 								Home 
 							</a>
 						</li>
 
-				  
+						<li class="nav-item">
+							<a class= "nav-link" href="?halaman=testimoni" >
+								Testimoni 
+							</a>
+						</li>
 				  <li class="dropdown">
 							<a href="#" data-toggle="dropdown" class="dropdown-toggle">
 								Galeri

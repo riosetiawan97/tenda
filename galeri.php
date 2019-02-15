@@ -14,8 +14,8 @@
 				<div class="row">
 					<div class="col-md-12">
 						<ul class="bcrumbs">
-							<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-							<li>Gallery - 5col</li>
+							<li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
+							<li>Gallery</li>
 						</ul>
 						<div class="clearfix"></div>
 					</div>
@@ -42,7 +42,7 @@
                 <?php
                 while ($produk = mysqli_fetch_array($query)) {
                 ?>
-                    <li><a class="mp-lightbox" href="foto/produk/<?php echo $produk['foto_produk']; ?>"><img src="foto/produk/<?php echo $produk['foto_produk']; ?>" class="img-responsive" alt=""></a></li>
+                    <li><a class="mp-lightbox" href="foto/produk/<?php echo $produk['foto_produk']; ?>"><img src="foto/produk/<?php echo $produk['foto_produk']; ?>"  class="" width="228" height="146"></a></li>
                 <?php
                 }
                 ?>

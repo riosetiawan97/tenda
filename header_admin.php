@@ -107,33 +107,12 @@ $instagram = substr($alamatinstagram,1);
 			<div class="row">
 				<div class="col-md-12">
 					<div class="top-bar-content">
-						<p>Pemesanan <span></span><i class="icon-mobile2"></i> +628 <span></span>&bull;<span></span> <i class="icon-mail3"></i> Mail us - <a href="#">@gmail.com</a></p>
+						<p>Pemesanan <span></span><i class="icon-mobile2" ></i><a href="https://api.whatsapp.com/send?phone=6287800081968&text=Hallo%20saya%20lihat%20di%20iklan%20www.bertenda99.co.id,%20saya%20mau%20konsultasi,%20mohon%20segera%20hubungi%20saya..%20%F0%9F%99%8F%F0%9F%98%8A" target="_blank">
+						
+						<?=$data_aboutus['no_telp']; ?></a><span></span>&bull;<span></span> <i class="icon-mail3"></i> Mail us - <a href="#">@gmail.com</a></p>
 					</div>
 					<div class="nav-social-icons">
 						<ul class="social-icons">
-							<li class="facebook">
-								<a href="http://facebook.com" target="_blank">
-								<i class="fa fa-facebook"></i><i class="fa fa-facebook"></i>
-								</a>
-							</li>
-							<li class="twitter">
-								<a href="http://twitter.com" target="_blank">
-								<i class="fa fa-twitter"></i>
-								<i class="fa fa-twitter"></i>
-								</a>
-							</li>
-							<li class="google-plus">
-								<a href="http://google.com" target="_blank">
-								<i class="fa fa-google-plus"></i>
-								<i class="fa fa-google-plus"></i>
-								</a>
-							</li>
-							<li class="pinterest">
-								<a href="http://pinterest.com" target="_blank">
-								<i class="fa fa-pinterest"></i>
-								<i class="fa fa-pinterest"></i>
-								</a>
-							</li>
 							<li class="instagram">
 								<a href="https://www.instagram.com/<?=$instagram; ?>/" target="_blank">
 								<i class="fa fa-instagram"></i>
@@ -141,9 +120,9 @@ $instagram = substr($alamatinstagram,1);
 								</a>
 							</li>
 							<li class="youtube">
-								<a href="http://youtube.com" target="_blank">
-								<i class="fa fa-youtube"></i>
-								<i class="fa fa-youtube"></i>
+							<a href="https://api.whatsapp.com/send?phone=6287800081968&text=Hallo%20saya%20lihat%20di%20iklan%20www.bertenda99.co.id,%20saya%20mau%20konsultasi,%20mohon%20segera%20hubungi%20saya..%20%F0%9F%99%8F%F0%9F%98%8A" target="_blank">
+								<i class="fa fa-phone"></i>
+								<i class="fa fa-phone"></i>
 								</a>
 							</li>
 						</ul>
@@ -163,7 +142,7 @@ $instagram = substr($alamatinstagram,1);
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
-					<a href="index.php"><img src="foto/logo/LOGO TENDA.jpg" width="100" height="100"></a>
+					<a href="indexadmin.php"><img src="foto/logo/LOGO TENDA.jpg" width="100" height="100"></a>
 				</div>
 
 				<!-- CART / SEARCH -->

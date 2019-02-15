@@ -18,7 +18,9 @@ $pecah = $koneksi->query("SELECT * FROM produk where id='$id_produk'")->fetch_as
 		$query_kategori = mysqli_query($koneksi, "select * from kategori");
 		while ($kategoriproduk = mysqli_fetch_array($query_kategori)){
 			?>
-			<option value="<?php echo $kategoriproduk["id_kategori"] ?>" required><?php echo $kategoriproduk["nama_kategori"] ?></option>
+			<option value="<?php echo $kategoriproduk["id_kategori"] ?>" <?php if ($pecah["id_kategori"]==$kategoriproduk["id_kategori"]) echo "selected";?> required>
+				<?php echo $kategoriproduk["nama_kategori"] ?>
+			</option>
 		<?php
 		}
 		?>
@@ -38,7 +40,7 @@ if (isset($_POST['save']))
 	$nama = $_FILES['foto']['name'];
     $lokasi =$_FILES['foto']['tmp_name'];
     if($nama == ''){
-        $koneksi->query("UPDATE produk SET nama_produk = '$_POST[nama]' where id='$id_produk'");
+        $koneksi->query("UPDATE produk SET id_kategori = '$_POST[kategori]', nama_produk = '$_POST[nama]' where id='$id_produk'");
         echo "<div class='alert alert-info'>Data Tersimpan</div>";
 	echo "<meta http-equiv='refresh' content='1;url=?halaman=galeri'>";
     }else{        
@@ -47,7 +49,7 @@ if (isset($_POST['save']))
         
 	    $upload = move_uploaded_file($lokasi, "foto/produk/".$nama);
         if($upload){
-            $koneksi->query("UPDATE produk SET foto_produk = '$nama', nama_produk = '$_POST[nama]' where id='$id_produk'");
+            $koneksi->query("UPDATE produk SET id_kategori = '$_POST[kategori]', foto_produk = '$nama', nama_produk = '$_POST[nama]' where id='$id_produk'");
             echo "<div class='alert alert-info'>Data Tersimpan</div>";
 	    echo "<meta http-equiv='refresh' content='1;url=?halaman=galeri'>";
         }else{

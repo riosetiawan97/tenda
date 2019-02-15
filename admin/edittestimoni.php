@@ -18,7 +18,7 @@ $pecah = $koneksi->query("SELECT * FROM testimoni where id_testimoni='$id_testim
 	<div class="form-group">
         <label>Foto</label>
         <img src="foto/testimoni/<?php echo $pecah['foto_testimoni']; ?>" width="100">
-		<input type="file" class="form-control" name="foto" required>
+		<input type="file" class="form-control" name="foto">
 	</div>
 	<button class="btn btn-primary" name="save">Simpan</button>
 </form>

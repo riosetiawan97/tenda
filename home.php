@@ -33,26 +33,6 @@
 							style="font-size:18px;color:#fff;"
 							><?php echo $perproduk ['subjudul']; ?>
 						</div>
-						<a href="banner.php" class="tp-caption small_title  customin customout tp-resizeme"
-							data-x="left" data-hoffset="60"
-							data-y="450"
-							data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-							data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-							data-speed="1600"
-							data-start="900"
-							data-easing="Back.easeInOut"
-							data-endspeed="300" style="	background: #000;
-							padding:18px 28px;
-							color: #fff;
-							text-transform: uppercase;
-							border: none;
-							font-size: 13px;
-							letter-spacing: 2px;
-							border-radius: 0px;
-							display: table;
-							transition: .4s;
-							border-radius:5px;
-							">Tambah Banner</a>
 					</li>
 					<?php
 					}
@@ -92,12 +72,11 @@
                 ?>
 				<div class="project-item <?php echo $produk['id_kategori']; ?>">
 					<div class="project-gal">
-						<img src="foto/produk/<?php echo $produk['foto_produk']; ?>" class="img-responsive" alt="">
+						<img src="foto/produk/<?php echo $produk['foto_produk']; ?>" class="" height="173">
 						<div class="overlay-folio">
 							<div class="hover-box">
 								<div class="hover-zoom">
 									<a class="mp-lightbox zoom" href="foto/produk/<?php echo $produk['foto_produk']; ?>"><i class="icon-plus2"></i></a>
-									<a class="link" href="?halaman=produk&id_kategori=<?php echo $kategori['id_kategori']; ?>"><i class="icon-link3"></i></a>					
 								</div>
 							</div>
 						</div>

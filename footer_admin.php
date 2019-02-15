@@ -3,7 +3,7 @@
 			<div class="row">
 				<div class="col-md-3">
 					<h4 class="space30">Tentang Kami</h4>
-			    <img src="images/basic/logo-ico.png" class="img-responsive space20" width="70" alt=""/>
+			    <img src="foto/logo/LOGO TENDA.jpg" class="img-responsive space20" width="120" alt=""/>
 					<p align="justify"><?php echo $data_aboutus['tentang']; ?></p>
 				</div>
 				<div class="col-md-6">
@@ -13,7 +13,7 @@
 						</li>
 						<li>
 						</li>
-						<li><i class="fa fa-phone"></i> <?php echo $data_aboutus['no_telp']; ?></li>
+						<li><i class="fa fa-phone"></i><a href="https://api.whatsapp.com/send?phone=6287800081968&text=Hallo%20saya%20lihat%20di%20iklan%20www.bertenda99.co.id,%20saya%20mau%20konsultasi,%20mohon%20segera%20hubungi%20saya..%20%F0%9F%99%8F%F0%9F%98%8A" target="_blank"> <?php echo $data_aboutus['no_telp']; ?></a></li>
 						<li><i class="fa fa-envelope-o"></i> <?php echo $data_aboutus['email']; ?></li>
 						<li><i class="fa fa-instagram"></i> <a href="https://www.instagram.com/<?=$instagram; ?>/" target="_blank"><?php echo $data_aboutus['instagram']; ?></a></li>
 					</ul>
@@ -31,20 +31,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8">
-					<p>&copy; Copyright 2015. Trend. Designed by <a href="http://www.ckthemes.com" target="_blank">CK Themes</a></p>
-				</div>
-				<div class="col-md-4">
-					<div class="f-social pull-right">
-						<a class="fa fa-twitter" href="#"></a>
-						<a class="fa fa-facebook" href="#"></a>
-						<a class="fa fa-linkedin" href="#"></a>
-						<a class="fa fa-dribbble" href="#"></a>
-						<a class="fa fa-google-plus" href="#"></a>
-						<a class="fa fa-skype" href="#"></a>
-						<a class="fa fa-behance" href="#"></a>
-						<a class="fa fa-stumbleupon" href="#"></a>
-						<a class="fa fa-rss" href="#"></a>
-					</div>
+					<p>&copy; Copyright 2019. Theme by <a href="http://www.ckthemes.com" target="_blank">CK Themes</a></p>
 				</div>
 			</div>
 		</div>

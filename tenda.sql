@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 14 Feb 2019 pada 15.01
+-- Generation Time: 15 Feb 2019 pada 12.10
 -- Versi Server: 10.1.10-MariaDB
 -- PHP Version: 7.0.4
 
@@ -143,12 +143,12 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`id`, `id_kategori`, `nama_produk`, `foto_produk`) VALUES
-(1, 1, 'Tenda123', '1.jpg'),
-(2, 2, 'kursi', '2.jpg'),
-(3, 3, 'Meja1', '3.jpg'),
+(1, 1, 'Tenda1', 'Capture.JPG'),
+(2, 1, 'Tenda4', 'TENDA_3.JPG'),
+(3, 1, 'Tenda5', 'TENDA_5.JPG'),
 (4, 4, 'Banner', '4.jpg'),
 (5, 5, 'AC', '5.jpg'),
-(7, 2, 'aksjdfkajsbbf', '10.jpg'),
+(7, 1, 'Tenda2', 'TENDA_2.JPG'),
 (13, 1, 'Tenda3', 'TENDA.JPG');
 
 -- --------------------------------------------------------
@@ -169,9 +169,9 @@ CREATE TABLE `testimoni` (
 --
 
 INSERT INTO `testimoni` (`id_testimoni`, `nama`, `pesan_testimoni`, `foto_testimoni`) VALUES
-(1, 'Bambang', 'Coba aja', '1.png'),
-(2, 'Rudi', 'Tes Tes', '2.png'),
-(3, 'Budi', 'Tendanya Bagus', '3.png'),
+(1, 'Bambang', 'Terimakasih Ber.Tenda99, saya sangat puas dengan layanan yang diberikan dan kualitas peralatan masih', '1.png'),
+(2, 'Rudi', 'Harga terjangkau dan pelayanan sangat memuaskan, lain kali saya akan menggunakan jasa Ber.Tenda99 la', '2.png'),
+(3, 'Budi', 'Harga terjangkau dan pelayanan sangat memuaskan, lain kali saya akan menggunakan jasa Ber.Tenda99 la', '3.png'),
 (4, 'Reza', 'Kursinya Bagus', '4.png');
 
 --
@@ -258,7 +258,7 @@ ALTER TABLE `produk`
 -- AUTO_INCREMENT for table `testimoni`
 --
 ALTER TABLE `testimoni`
-  MODIFY `id_testimoni` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_testimoni` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

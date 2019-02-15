@@ -33,7 +33,7 @@
 							style="font-size:18px;color:#fff;"
 							><?php echo $perproduk ['subjudul']; ?>
 						</div>
-						<a href="banner.php" class="tp-caption small_title  customin customout tp-resizeme"
+						<a href="?halaman=banner" class="tp-caption small_title  customin customout tp-resizeme"
 							data-x="left" data-hoffset="60"
 							data-y="450"
 							data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
@@ -66,27 +66,7 @@
 
 	<!-- INNER CONTENT -->
 	<div class="inner-content no-padding">
-		<div class="container">
-			<div class="space60"></div>
-			<div class="welcome-content text-center">
-				<h2>Selamat Datang Admin</h2>
-				<p class="lead">Tempat Sewa Tenda Berkualitas Dengan Harga Terjangkau</p>
-			</div>
-		</div>
-		
-		<div class="clearfix"></div>
-		
-		<div class="container info-home">
-			<div class="col-md-5">
-				<img src="foto/tenda.jpg" alt="">
-			</div>
-			<div class="col-md-7">
-				<h3>Pilihan Produk</em></h3>
-				<div class="clearfix space10"></div>
-				<a href="?halaman=produk" class="button btn-lg">Halaman Produk</a>
-			</div>
-		</div>
-		
+				
 		<div class="clearfix space90"></div>
 		
 		<section id="portfolio-section">
@@ -112,19 +92,16 @@
                 ?>
 				<div class="project-item <?php echo $produk['id_kategori']; ?>">
 					<div class="project-gal">
-						<img src="foto/produk/<?php echo $produk['foto_produk']; ?>" class="img-responsive" alt="">
+						<img src="foto/produk/<?php echo $produk['foto_produk']; ?>" class="" height="173">
 						<div class="overlay-folio">
 							<div class="hover-box">
 								<div class="hover-zoom">
 									<a class="mp-lightbox zoom" href="foto/produk/<?php echo $produk['foto_produk']; ?>"><i class="icon-plus2"></i></a>
-									<a class="link" href="?halaman=produk&id_kategori=<?php echo $kategori['id_kategori']; ?>"><i class="icon-link3"></i></a>					
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="project-info">
-						<h2><?php echo $produk['nama_produk']; ?></h2>
-						<p><?php echo $produk['harga'];?><?php echo $produk['satuan'];?></p>
 					</div>
 				</div>
 				<?php
